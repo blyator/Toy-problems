@@ -1,3 +1,5 @@
+//This is a program that checks a driver's speed and applies penalties
+
 const prompt = require("prompt-sync")();
 
 function speedDetector() {

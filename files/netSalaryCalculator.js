@@ -1,3 +1,5 @@
+//This program calculates an employee's net salary after deductions.
+
 const prompt = require("prompt-sync")();
 
 function calculateNetSalary() {
