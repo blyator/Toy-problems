@@ -12,25 +12,27 @@ function calculateNetSalary() {
     basicSalary < 0 ||
     benefits < 0
   ) {
-    return console.log("Enter salary in Ksh");
+    return console.log("Enter salary in Ksh"); // Validate input to ensure basic salary is a positive number
   }
 
   let grossSalary = basicSalary + benefits;
   let nssfDeduction = calculateNSSF(grossSalary);
-  let taxableIncome = grossSalary - nssfDeduction;
+  let taxableIncome = grossSalary - nssfDeduction; // Determine taxable income (Gross Salary minus NSSF deduction)
   let payee = calculatePAYE(taxableIncome);
   let shifDeduction = grossSalary * 0.0275;
   let personalRelief = 2400;
   let netTax = Math.max(0, payee - personalRelief);
   let netSalary = grossSalary - (netTax + shifDeduction + nssfDeduction);
 
-  console.log(`\n--- Salary Breakdown ---`);
+  console.log(`\n--- Salary Breakdown ---`); // Display the salary breakdown
   console.log(`Gross Salary: Ksh ${grossSalary.toFixed(2)}`);
   console.log(`PAYE (Tax): Ksh ${payee.toFixed(2)}`);
   console.log(`NSSF Deduction: Ksh ${nssfDeduction.toFixed(2)}`);
   console.log(`SHIF Deduction: Ksh ${shifDeduction.toFixed(2)}`);
   console.log(`Net Salary: Ksh ${netSalary.toFixed(2)}`);
 }
+
+//PAYE Calculation Function Updated for 2025
 
 function calculatePAYE(taxableIncome) {
   let tax = 0;
@@ -63,4 +65,4 @@ function calculateNSSF(grossSalary) {
   return Math.min(2160, tier1 + tier2);
 }
 
-calculateNetSalary();
+calculateNetSalary(); // calling the program

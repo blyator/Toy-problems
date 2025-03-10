@@ -1,12 +1,12 @@
 //This is a program that checks a driver's speed and applies penalties
 
-const prompt = require("prompt-sync")();
+const prompt = require("prompt-sync")(); //ensures it runs on node enironment and prompts
 
 function speedDetector() {
   let speed = parseInt(prompt("Enter speed (km/h): "));
 
   if (isNaN(speed) || speed < 0) {
-    console.log("Invalid speed! Please enter valid speed.");
+    console.log("Invalid speed! Please enter valid speed."); // validation to ensure valid input
     return;
   }
 
@@ -21,4 +21,4 @@ function speedDetector() {
     }
   }
 }
-speedDetector();
+speedDetector(); // calling the program
